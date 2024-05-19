@@ -16,7 +16,6 @@ class Brick extends PositionComponent {
   }
 
   RRect getRRect() {
-    // Configure Rectangle Shape
     return RRect.fromRectAndRadius(size.toRect(),  Radius.circular(gridSize.x*0.1));
   }
 }
