@@ -20,4 +20,14 @@ class BrickBreakerGame extends FlameGame{
   
     gridSize = Vector2(size.x * grid, size.y * grid);
   }
+  
+  @override
+  void onMount() {
+    world.add(Brick(gridSize: gridSize).. x = size.x/2 ..y = size.y / 2);
+    addAll([cameraComponent, world]);
+  }
+  @override
+  Color backgroundColor() {
+    return const Color.fromARGB(255, 173, 223, 247);
+  }
 }
