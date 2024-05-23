@@ -9,13 +9,15 @@ class Brick extends PositionComponent {
   Brick({required this.gridSize}) : super(size: gridSize);
   
   Paint paint = Paint()..color = Colors.red;
-
+  
   @override
   void render(Canvas canvas) {
+    // Draw Brick to Rectangle
     canvas.drawRRect(getRRect(), paint);
   }
 
   RRect getRRect() {
+    // Configure Rectangle Shape
     return RRect.fromRectAndRadius(size.toRect(),  Radius.circular(gridSize.x*0.1));
   }
 }
