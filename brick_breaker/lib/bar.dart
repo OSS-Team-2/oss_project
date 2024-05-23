@@ -9,4 +9,8 @@ class Bar extends PositionComponent{
   void render(Canvas, canvas) {
   canvas.drawRRect(getRRect, paint);
   }
+  
+  RRect getRRect() {
+    return RRect.fromRectAndRadius(size.toRect(), Radius.circular(gridSize.x * 0.1));
+  }
 }
