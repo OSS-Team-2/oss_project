@@ -6,7 +6,7 @@ import 'package:flame/game.dart';
 import 'package:flame/components.dart';
 import 'package:flame/flame.dart';
 import 'package:brick_breaker/bar.dart';
-
+import 'package:brick_breaker/ball.dart';
 class BrickBreakerGame extends FlameGame{
   static double grid = 0.1;
   static late Vector2 gridSize;
@@ -30,7 +30,8 @@ class BrickBreakerGame extends FlameGame{
   void onMount() {
     populateBricks(4, 8);
     bar = Bar(gridSize: gridSize)..position = Vector2(size.x / 2 -  gridSize.x, size.y - gridSize.y);
-    world.addAll(bar);
+    ball = Ball(gridSize: gridSize)..position = size / 2;
+    world.addAll([bar, ball]);
     world.addAll(bricks);
     addAll([cameraComponent, world]);
   }
